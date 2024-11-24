@@ -26,7 +26,7 @@ class VouchersServiceProvider extends ServiceProvider
             }
 
             $this->publishes([
-                __DIR__.'/../translations' => resource_path('lang/vendor/vouchers'),
+                __DIR__.'/../translations' => $this->app->langPath().'/vendor/vouchers',
             ], 'translations');
         }
     }
