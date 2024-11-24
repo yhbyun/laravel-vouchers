@@ -2,7 +2,7 @@
 
 namespace BeyondCode\Vouchers;
 
-use Illuminate\Support\Str;
+use App\Support\Str;
 
 class VoucherGenerator
 {
@@ -70,7 +70,7 @@ class VoucherGenerator
         $characters = collect(str_split($this->characters));
 
         for ($i = 0; $i < $length; $i++) {
-            $mask = Str::replaceFirst('*', $characters->random(1)->first(), $mask);
+            $mask = Str::replaceFirst('*', $characters->random(), $mask);
         }
 
         $code .= $mask;
